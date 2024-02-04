@@ -5,6 +5,10 @@ import numpy as np
 from itertools import cycle, islice
 
 flights = pd.read_csv('/Users/fantunez/Documents/dataMining/airline/airline_delay.csv') 
+print(flights.describe())
+print(flights.dtypes)
+
+
 flights19 = flights.loc[flights['year'] == 2019]
 flights20 = flights.loc[flights['year'] == 2020]
 
@@ -60,6 +64,7 @@ ax1.set_title('Total Flights With Over 15min Delays (2019)')
 ax1.set_ylabel('Airline')
 ax2.barh(carrierDelay20.index, carrierDelay20.values, color='deepskyblue')
 ax2.set_title('Total Flights With Over 15min Delays (2020)')
+ax2.set_xlabel('Total Flights Delayed')
 plt.tight_layout()
 plt.show()
 
